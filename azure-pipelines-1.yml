@@ -11,3 +11,11 @@ pool:
 
 steps:
 -
+- task: AzureWebApp@1
+  inputs:
+    appType: 'webApp'
+    appName: 'Harisha'
+    deployToSlotOrASE: true
+    slotName: 'production'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
